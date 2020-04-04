@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {View} from 'react-native';
 import {Header, ImageCard} from './src/components/uikit';
-import {height, width} from './constants';
 
 const url =
   'https://gitlab.com/gHashTag/react-native-init-data/-/raw/master/db.json';
