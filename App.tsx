@@ -3,22 +3,29 @@ import {StyleSheet, Text, View} from 'react-native';
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Hello World!!!</Text>
+    <View style={styles.viewStyle}>
+      <Text style={styles.textStyle}>STAR GATE</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  viewStyle: {
+    backgroundColor: '#30d0fe',
+    height: 116,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    paddingLeft: 22,
+    paddingTop: 71,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.2,
+    elevation: 2,
+    position: 'relative',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
+  textStyle: {
+    color: 'white',
+    fontSize: 28,
+    fontFamily: 'AvenirNext-DemiBold',
   },
 });
 
