@@ -2,16 +2,24 @@ import React, {useEffect, useState} from 'react';
 import {View} from 'react-native';
 import Header from './src/components/uikit/Header';
 
+const url =
+  'https://gitlab.com/gHashTag/react-native-init-data/-/raw/master/db.json';
+
 const App = () => {
-  const [title, setTitle] = useState('STAR GATE');
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    // setTitle('Hello World');
+    const fetchData: any = async () => {
+      const response = await fetch(url);
+      setData(await response.json());
+    };
+
+    fetchData();
   }, []);
 
   return (
     <View>
-      <Header title={title} />
+      <Header title={'STAR GATE'} />
     </View>
   );
 };
