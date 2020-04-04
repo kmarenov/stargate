@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 const App = () => {
+  const [title, setTitle] = useState('STAR GATE');
+
+  useEffect(() => {
+    // setTitle('Hello World');
+  }, []);
+
   return (
     <View style={styles.viewStyle}>
-      <Text style={styles.textStyle}>STAR GATE</Text>
+      <Text style={styles.textStyle}>{title}</Text>
     </View>
   );
 };
