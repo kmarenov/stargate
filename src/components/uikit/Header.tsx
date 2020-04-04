@@ -2,9 +2,10 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 const Header = ({title}: {title: string}) => {
+  const {viewStyle, textStyle} = styles;
   return (
-    <View style={styles.viewStyle}>
-      <Text style={styles.textStyle}>{title}</Text>
+    <View style={viewStyle}>
+      <Text style={textStyle}>{title}</Text>
     </View>
   );
 };
