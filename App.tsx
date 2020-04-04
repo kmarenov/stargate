@@ -14,7 +14,11 @@ const App = () => {
       setData(await response.json());
     };
 
-    fetchData();
+    try {
+      fetchData();
+    } catch (e) {
+      throw e;
+    }
   }, []);
 
   return (
