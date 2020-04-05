@@ -2,31 +2,31 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {width} from '../../../constants';
 
-const ImageCard = () => {
+const ImageCard = ({data}: {data: ApiRow}) => {
+  const {name, image} = data;
   const {container, cover, h1, sub} = styles;
   return (
     <View style={container}>
       <View style={sub}>
-        <Image
-          source={{uri: 'https://picsum.photos/200/300?random=1'}}
-          style={cover}
-        />
+        <Image source={{uri: image}} style={cover} />
       </View>
-      <Text style={h1}>Stargate</Text>
+      <Text style={h1}>{name.toUpperCase()}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    width: width / 2.1,
+    width: width / 2.4,
+    paddingVertical: 10,
   },
   sub: {
-    padding: 10,
     shadowColor: 'black',
     shadowRadius: 8,
     shadowOffset: {width: 0, height: 5},
     shadowOpacity: 0.4,
+    backgroundColor: 'white',
+    borderRadius: 10,
   },
   cover: {
     width: width / 2.4,
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   h1: {
+    paddingTop: 10,
     fontFamily: 'AvenirNext-DemiBold',
     fontSize: 18,
     alignSelf: 'center',
