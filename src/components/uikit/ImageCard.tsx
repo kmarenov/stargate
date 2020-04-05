@@ -1,17 +1,20 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {width} from '../../../constants';
 
-const ImageCard = ({data}: {data: ApiRow}) => {
+const ImageCard = ({data, onPress}: {data: ApiRow; onPress: any}) => {
   const {name, image} = data;
   const {container, cover, h1, sub} = styles;
+  const img = `https${image.medium.slice(4)}`;
   return (
-    <View style={container}>
-      <View style={sub}>
-        <Image source={{uri: image}} style={cover} />
+    <TouchableOpacity onPress={onPress}>
+      <View style={container}>
+        <View style={sub}>
+          <Image source={{uri: img}} style={cover} />
+        </View>
+        <Text style={h1}>{name.toUpperCase()}</Text>
       </View>
-      <Text style={h1}>{name.toUpperCase()}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
