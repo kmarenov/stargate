@@ -15,9 +15,9 @@ const DetailsScreen = ({
       <Header
         detail
         title={name}
-        onPress={() => navigation.goBack()}
-        leftIcon="ios-arrow-back"
-        leftColor="white"
+        onPressLeft={() => navigation.goBack()}
+        iconLeft="ios-arrow-back"
+        colorLeft="white"
       />
       <ScrollView>
         <View style={sub}>

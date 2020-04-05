@@ -24,7 +24,7 @@ const HomeScreen = ({navigation}: {navigation: NavigationScreenProp<any>}) => {
 
   return (
     <View>
-      <Header title={'STAR GATE'} />
+      <Header title={'STAR GATE'} iconRight="magnify" colorRight="white" />
       <Layout>
         {data.map(({show: item}: {show: ApiRow}) => {
           return (
